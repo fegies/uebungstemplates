@@ -1,0 +1,58 @@
+\documentclass[12pt]{article}
+\usepackage{listings}
+\usepackage{fontspec,xltxtra}
+\setmainfont{Liberation Sans}
+\usepackage[a4paper,left=3cm,right=3cm,top=1.5cm,bottom=2.5cm]{geometry}
+\usepackage{qtree}
+\usepackage[ngerman]{babel}
+\usepackage{datetime}
+\newdateformat{myformat}{\THEDAY \monthname[\THEMONTH], \THEYEAR}
+
+\author{AUTORNAME}
+\title{Lösung AUFGABENTITEL}
+
+\lstdefinelanguage{algopseudocode}
+{
+morekeywords={
+class,if,fi,do,od,for,to,then,function,while,else,return,delete,new
+},
+morecomment=[l]{//}
+}
+
+
+\begin{document}
+\maketitle
+\lstset{language=algopseudocode}
+
+\textbf{Aufgabe 10.1}
+
+Beispiel:
+
+\begin{minipage}[c]{\textwidth}
+\begin{lstlisting}[frame=single,title={Aufgabe 10.3}]
+int n <- Anzahl der Knoten;
+Liste E1 <- Liste aller Kanten;
+Liste E2 <- Liste aller Kanten;
+Kante[] rev = new Kante[E1.length];
+
+//Bucketsort(Liste, #Elemente, #Buckets, Sortierkriterium)
+
+Bucketsort(E1, E1.length, n, v);
+Bucketsort(E1, E1.length, n, u);
+
+Bucketsort(E2, E2.length, n, u);
+Bucketsort(E2, E2.length, n, v);
+
+for int i=1 to E1.length do
+	if (E1[i].u = E2[i].v) ^ (E1[i].v = E2[i].u) then
+		rev[i] <- E2[i];
+	else
+		rev[i] <- null;
+	fi
+od
+\end{lstlisting}
+\end{minipage}
+
+\vspace{0.75cm}
+
+\end{document}
