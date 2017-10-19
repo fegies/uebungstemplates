@@ -1,0 +1,41 @@
+\documentclass[11pt]{article}
+\usepackage{fontspec,xltxtra}
+\setmainfont{Liberation Serif}
+\usepackage[a4paper,left=3cm,right=3cm,top=1.5cm,bottom=2.5cm]{geometry}
+\usepackage[ngerman]{babel}
+\usepackage{datetime}
+\usepackage{parskip}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{enumitem}
+\usepackage{chngcntr}
+\usepackage{fancyhdr}
+
+\newdateformat{myformat}{\THEDAY \monthname[\THEMONTH], \THEYEAR}
+
+\author{Dat Author}
+\title{Dat Title}
+
+\setlength{\parindent}{0pt}
+\renewcommand\thesection{Aufgabe \,\arabic{section}}
+\counterwithin*{equation}{section}
+
+\makeatletter
+\let\runauthor\@author
+\let\runtitle\@title
+\makeatother
+\pagestyle{fancy}
+\rhead{\runauthor}
+\lhead{\runtitle}
+
+
+\begin{document}
+\maketitle
+
+Dat Inhalt
+\newpage
+Dat new page
+
+\end{document}
+
